@@ -2,6 +2,8 @@
 import React, { useState, useCallback } from 'react';
 import ReactCardFlip from 'react-card-flip';
 
+import backCard from '../../assets/backCard.svg';
+
 import { CardFront, CardBack, CardContainer } from './styles';
 
 interface CardContentProps {
@@ -20,19 +22,19 @@ const Card: React.FC<CardProps> = ({ isFlipped, cardContent, onCardClick }) => {
   const [cardIsFlipped, setCardIsFlipped] = useState(isFlipped);
 
   return (
-    <CardContainer onClick={() => onCardClick()}>
+    <CardContainer style={{ display: 'show' }} onClick={() => onCardClick()}>
       <ReactCardFlip
         isFlipped={isFlipped}
         flipSpeedBackToFront={0.3}
         flipSpeedFrontToBack={0.3}
       >
         <CardBack>
-          This is the Back of the card.
-          {`PAR: ${cardContent.pairId}`}
-          {`ID: ${cardContent.pairId}`}
+          <img src={backCard} alt="Back Card" />
         </CardBack>
 
-        <CardFront>{cardContent.image}</CardFront>
+        <CardFront>
+          <img src={cardContent.image} alt="Back Card" />
+        </CardFront>
       </ReactCardFlip>
     </CardContainer>
   );

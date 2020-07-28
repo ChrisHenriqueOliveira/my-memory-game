@@ -11,7 +11,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: url(${bg}) no-repeat center center fixed;
+    background: #222B45;
     background-size: cover;
     height: 100%;
     color: #f4ede8;
